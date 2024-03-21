@@ -6,24 +6,24 @@
 /*   By: mekherbo <mekherbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 18:00:55 by mekherbo          #+#    #+#             */
-/*   Updated: 2024/03/15 20:31:06 by mekherbo         ###   ########.fr       */
+/*   Updated: 2024/03/20 12:36:45 by mekherbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-static void	is_quote(char *input)
-{
-	int	i;
+// static int	is_quote(char *input)
+// {
+// 	int	i;
 
-	i = 0;
-	while (input[i])
-	{
-		if (input == '"')
-			return (1);
-	}
-	return (0);
-}
+// 	i = 0;
+// 	while (input[i])
+// 	{
+// 		if (input[i] == '"')
+// 			return (1);
+// 	}
+// 	return (0);
+// }
 
 static void choice(char *input)
 {
@@ -48,12 +48,29 @@ static void choice(char *input)
 	printf("choice = %d\n", choice);
 }
 
-int main()
+static void	print_env(t_env *env)
+{
+	t_env *tmp;
+	
+	tmp = env;
+	while (tmp)
+	{
+		printf("%s\n", tmp->line);
+		tmp = tmp->next;
+	}
+}
+int main(int ac, char **av, char **envp)
 {
 	char *input;
 	char **tab;
 	int		i;
 
+	t_env *env;
+
+	env  = get_env(envp);
+	//print_env(env);
+	(void)ac;
+	(void)av;
 	while (1)
 	{
 		i = -1;
@@ -72,7 +89,11 @@ int main()
 		else
 		{
 			add_history(input);
-			printf("you entered : %s\n", input);
+			//printf("you entered : %s\n", input);
+			if (strcmp(input, "env") == 0)
+			{
+				print_env(env);
+			}
 		}
 		tab = ft_split(input, ' ');
 		if (!tab)

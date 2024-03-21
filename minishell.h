@@ -6,7 +6,7 @@
 /*   By: mekherbo <mekherbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 18:13:33 by mekherbo          #+#    #+#             */
-/*   Updated: 2024/03/13 20:52:14 by mekherbo         ###   ########.fr       */
+/*   Updated: 2024/03/21 13:10:31 by mekherbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,20 @@ typedef struct	s_data
 	int		exit_status;
 	char	*pathname;
 }	t_data;
+
+typedef struct s_env
+{
+	char	*line;
+	struct s_env   *prev;
+	struct s_env   *next;
+}	t_env;
+
+typedef struct  s_data
+{
+	char *path;
+}	t_data;
+
+
+t_env	*get_env(char **envp);
 
 #endif 
