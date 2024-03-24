@@ -6,7 +6,7 @@
 /*   By: mekherbo <mekherbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 18:00:55 by mekherbo          #+#    #+#             */
-/*   Updated: 2024/03/20 12:36:45 by mekherbo         ###   ########.fr       */
+/*   Updated: 2024/03/24 15:59:03 by mekherbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,15 @@ int main(int ac, char **av, char **envp)
 {
 	char *input;
 	char **tab;
+	char	*path;
 	int		i;
 
 	t_env *env;
 
 	env  = get_env(envp);
-	//print_env(env);
+	path = get_path(envp);
+	printf("Path = %s\n", path);
+	print_env(env);
 	(void)ac;
 	(void)av;
 	while (1)

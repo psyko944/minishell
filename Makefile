@@ -6,7 +6,7 @@
 #    By: mekherbo <mekherbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/27 18:35:35 by mekherbo          #+#    #+#              #
-#    Updated: 2024/03/20 10:33:42 by mekherbo         ###   ########.fr        #
+#    Updated: 2024/03/24 15:54:26 by mekherbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = minishell
 NAME_BONUS = minishell_bonus
 
 SRCS = main.c \
-ft_env.c
+ft_env.c \
+env_utils.c
 
 OBJS := ${SRCS:.c=.o}
 
