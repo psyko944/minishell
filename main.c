@@ -6,7 +6,7 @@
 /*   By: mekherbo <mekherbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 18:00:55 by mekherbo          #+#    #+#             */
-/*   Updated: 2024/03/24 15:59:03 by mekherbo         ###   ########.fr       */
+/*   Updated: 2024/03/27 09:10:29 by mekherbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,19 @@
 // 			return (1);
 // 	}
 // 	return (0);
+// }
+
+// static void	cmd_routine(t_data *data)
+// {
+// 	int	i;
+
+// 	i = -1;
+// 	while (++i)
+// 	{
+// 		exec_cmd(data->cmd);
+// 	}
+// 	while (--i)
+// 		add_history(data->cmd);
 // }
 
 static void choice(char *input)
@@ -70,8 +83,8 @@ int main(int ac, char **av, char **envp)
 
 	env  = get_env(envp);
 	path = get_path(envp);
-	printf("Path = %s\n", path);
-	print_env(env);
+	//printf("Path = %s\n", path);
+	//print_env(env);
 	(void)ac;
 	(void)av;
 	while (1)
@@ -83,7 +96,7 @@ int main(int ac, char **av, char **envp)
 			printf("readline error no display prompt\n");
 			break ;
 		}
-		
+		printf("without quotes = %s\n", parse_token(input));
 		if (strcmp(input, "clear") == 0)
 		{
 			printf("clear history\n");

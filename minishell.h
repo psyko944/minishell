@@ -6,7 +6,7 @@
 /*   By: mekherbo <mekherbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 18:13:33 by mekherbo          #+#    #+#             */
-/*   Updated: 2024/03/24 15:57:38 by mekherbo         ###   ########.fr       */
+/*   Updated: 2024/03/27 09:15:36 by mekherbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,5 @@ typedef struct s_env
 
 t_env	*get_env(char **envp);
 char    *get_path(char **envp);
+char 	*parse_token(char *input);
 #endif 
